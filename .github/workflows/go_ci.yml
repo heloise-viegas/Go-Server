@@ -20,3 +20,9 @@ jobs:
         go get -u github.com/gorilla/mux
     - name: Step 4 Build
       run: go build .
+    - name: Step 5 Use Linter
+      run: |
+        go vet .
+        golint .  
+
+      # You can't use the - symbol for name, run and uses fielda on the same step. Only one - for the whole step. Here for example you have it for multiple name and run fields for the same step.
